@@ -1,5 +1,6 @@
 package com.lnu.home;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 
 public class Loops {
@@ -48,5 +49,16 @@ public class Loops {
 
         double maxValue = getMaxY(y);
         System.out.println("\nThe biggest value of function is : " + maxValue);
+    }
+
+    public void sumElementsRaisedToDegree(int element, int maxDegree) {
+        BigDecimal suma = BigDecimal.valueOf(0);
+        for (int i = 2; i <= maxDegree; i++) {
+            double raisedElement = Math.pow(element, maxDegree);
+            BigDecimal rE = BigDecimal.valueOf(raisedElement);
+            suma = suma.add(rE);
+        }
+
+        System.out.format("\nSum of %d^2 + ... + %d^%d is equal to " + suma, element, element, maxDegree);
     }
 }
